@@ -8,7 +8,6 @@ import './App.css';
 function App() {
   const today = startOfMonth(new Date());
 
-  // Initialize 5 months: prev2 to next2
   const [monthList, setMonthList] = useState(() =>
     Array.from({ length: 5 }, (_, i) => addMonths(today, i - 2))
   );
@@ -17,18 +16,37 @@ function App() {
   const [offset, setOffset] = useState(['', 0]);
   const [showEventDialogueBox, setShowEventDialogueBox] = useState(false);
 
-  console.log(monthList)
+  console.log(monthList);
   const handlePrevForCalendar = () => {
     setMonthList((prevList) => {
-      const newMonth = addMonths(prevList[4], 1);
-      return [...prevList.slice(1), newMonth]; // remove leftmost, add rightmost
+      let newList = [...prevList];
+      const newMonth =
+        offset[1] === 0
+          ? addMonths(newList[4], 1)
+          : addMonths(newList[offset[1]] % 5, 1);
+      console.log('offset: ', offset, ' ', [offset[1] % 5]);
+      // newList = newList.slice((offset[1] + 1) % 5);
+      // newList = [newList.slice()]
+      // newList.pop();
+      // newList.unshift(newMonth);
+      // console.log("next month", newMonth)
+      return newList; // remove leftmost, add rightmost
     });
   };
 
   const handleNextForCalendar = () => {
+    // console.log("handled next")
     setMonthList((prevList) => {
-      const newMonth = subMonths(prevList[0], 1);
-      return [newMonth, ...prevList.slice(0, 4)]; // add leftmost, remove rightmost
+      const newList = [...prevList];
+      const firstMonth = newList[0];
+
+      const newMonth =
+        offset[1] === 0
+          ? subMonths(prevList[0], 1)
+          : subMonths(prevList[5 - offset[1]], 1);
+      // console.log("newMonth :", newMonth);
+      newList[4 - offset[1]] = newMonth;
+      return newList; // remove rightmost, add leftmost
     });
   };
 
