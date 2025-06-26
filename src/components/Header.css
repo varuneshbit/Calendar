@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+.headerMain {
+    width: 94%;
+    height: 8vh;
+    border-top-left-radius: 2ch;
+    border-top-right-radius: 2ch;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerMainMonthName {
+    height: 100%;
+    width: 95%;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.headerMainButtons {
+    width: 9%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.headerPrevButton,
+.headerNextButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease-in-out;
+}
+
+.headerPrevButton:hover,
+.headerNextButton:hover {
+    background-color: rgb(208, 206, 206);
+    cursor: pointer;
+}
+
+.headerMainButton {
+    height: 60%;
+    width: 34%;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    /* background-color: black; */
+}

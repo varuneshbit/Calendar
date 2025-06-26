@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+
+.daysOfCalendarMain {
+    height: 10%;
+    width: 80%;
+    display: grid;
+    /* flex-direction: column; */
+    grid-template-columns: repeat(7, 1fr);
+    /* grid-template-rows: .7fr repeat(5, .8fr); */
+    gap: .8vw;
+    align-items: center;
+}
+
+.datesOfMonth {
+    height: 90%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto;
+    gap: .3vw;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.daysOfCalendarTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+.calendarContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.daysOfCalendarTitle {
+    text-align: center;
+    padding: 8px 0;
+    font-family: "Nixie One", system-ui;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.calendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    /* padding: 10px; */
+}
+
+.dayCell {
+    text-align: center;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    background: white;
+    justify-self: center;
+    cursor: pointer;
+    font-family: "Lemon", serif;
+    font-weight: 100;
+    font-size: .9rem;
+    font-style: normal;
+}
+
+.outsideMonth {
+    color: #aaa;
+    background-color: #f9f9f9;
+}
+
+.todayCell {
+    background-color: #57a1ff;
+    color: white;
+}
+
+.eventCell {
+    background-color: #ffa500;
+    color: white;
+}
