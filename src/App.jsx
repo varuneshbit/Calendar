@@ -14,6 +14,8 @@ function App() {
 
   const [selectedMonth, setSelectedMonth] = useState(today.getMonth());
   const [offset, setOffset] = useState(['', 0]);
+  // const [offset, setOffset] = useState(0);
+
   const [showEventDialogueBox, setShowEventDialogueBox] = useState(false);
 
   console.log(monthList);
@@ -23,8 +25,11 @@ function App() {
       const newMonth =
         offset[1] === 0
           ? addMonths(newList[4], 1)
-          : addMonths(newList[offset[1]] % 5, 1);
+          : addMonths(newList[(offset[1] - 1) % 5], 1);
+      // console.log(newMonth)
+      console.log("newMonth ", newMonth)
       console.log('offset: ', offset, ' ', [offset[1] % 5]);
+      newList[offset[1]] = newMonth;
       // newList = newList.slice((offset[1] + 1) % 5);
       // newList = [newList.slice()]
       // newList.pop();
